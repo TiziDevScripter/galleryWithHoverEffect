@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gallery{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(330px, 1fr));
+    justify-content: center;
+    gap: .5em;
+}   
+.gallery .image{
+    position: relative;
+}
+.gallery .image .images{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.gallery .image::before{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: "";
+    top: 0;
+    background-color: #000a;
+    color: #FFF;
+    font-size: 2em;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0.0% at 100% 100%);
+    transition: clip-path .3s ease-in-out;
+}
+.gallery .image:first-child::before{
+    content: "Assassin's Creed";
+}
+.gallery .image:nth-child(2)::before{
+    content: "Minecraft";
+}
+.gallery .image:nth-child(3)::before{
+    content: "Mario Bros";
+}
+.gallery .image:nth-child(4)::before{
+    content: "Sonic";
+}
+.gallery .image:nth-child(5)::before{
+    content: "God of War";
+}
+.gallery .image:nth-child(6)::before{
+    content: "Call of Duty";
+}
+.gallery .image:nth-child(7)::before{
+    content: "Clash Royale";
+}
+.gallery .image:nth-child(8)::before{
+    content: "Zelda";
+}
+.gallery .image:nth-child(9)::before{
+    content: "Battleground";
+}
+.gallery .image:nth-child(10)::before{
+    content: "Grand Theft Auto V";
+}
+.gallery .image:nth-child(11)::before{
+    content: "Street Fighter";
+}
+.gallery .image:last-child::before{
+    content: "CS:GO";
+}
+.gallery .image:hover::before{
+    clip-path: circle(141.4% at 100% 100%);
+}
